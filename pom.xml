@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>za.ac.eyetv</groupId>
-	<artifactId>UserSercurity</artifactId>
+	<artifactId>UserSecurity</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>UserSercurity</name>
-	<description>UserSercurity</description>
+	<name>UserSecurity</name>
+	<description>UserSecurity</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -34,11 +34,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jdbc</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -130,6 +125,7 @@
 			<artifactId>guava</artifactId>
 			<version>31.1-jre</version>
 		</dependency>
+		<!--Spring WebSockets -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-websocket</artifactId>
