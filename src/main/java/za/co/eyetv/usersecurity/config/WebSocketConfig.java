@@ -1,4 +1,4 @@
-package za.co.eyetv.usersecurity.common.config;
+package za.co.eyetv.usersecurity.config;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

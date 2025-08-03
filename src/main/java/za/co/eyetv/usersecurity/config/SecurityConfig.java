@@ -1,6 +1,7 @@
-package za.co.eyetv.usersecurity.common.config;
+package za.co.eyetv.usersecurity.config;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.actuate.autoconfigure.security.servlet.EndpointRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -21,7 +22,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import za.co.eyetv.usersecurity.auth.security.JwtAuthenticationFilter;
+import za.co.eyetv.usersecurity.security.JwtAuthenticationFilter;
 
 import java.util.List;
 
@@ -41,11 +42,23 @@ public class SecurityConfig {
                 // 2️⃣  ENABLE CORS so Spring can answer OPTIONS requests
                 .cors(Customizer.withDefaults())
                 .authorizeHttpRequests(auth -> auth
+                        // =================== ADD THESE LINES ===================
+                        .requestMatchers("/", "/index.html", "/assets/**", "/*.ico", "/*.png", "/*.webmanifest").permitAll()
+                        // =======================================================
+                        .requestMatchers(EndpointRequest.toAnyEndpoint()).permitAll()
+                        .requestMatchers(
+                                "/ws/**",
+                                "/static/**",
+                                "/webjars/**"
+                        ).permitAll()
                         .requestMatchers("/api/auth/**").permitAll()
                         .requestMatchers("/api/public/**").permitAll()
                         .requestMatchers("/api/admin/**").hasRole("ADMIN")
-                        .requestMatchers("/api/content/**").hasAnyRole("ADMIN", "CONTENT_MANAGER")
-                        .requestMatchers("/api/display/**").hasRole("DISPLAY")
+                        .requestMatchers("/api/content/**", "/api/user/me").hasAnyRole("ADMIN", "CONTENT_MANAGER")
+                        .requestMatchers("/ws", "/api/schedulescreens/**", "/api/screens/**", "/api/screen-groups/**").hasAnyRole("DISPLAY", "ADMIN", "CONTENT_MANAGER", "USER")
+                        .requestMatchers("/api/schedules/**").hasAnyRole("ADMIN", "CONTENT_MANAGER")
+                        .requestMatchers("/api/playlist/**").hasAnyRole("ADMIN", "CONTENT_MANAGER")
+                        .requestMatchers("/s3/**").hasAnyRole("ADMIN", "CONTENT_MANAGER")
                         .requestMatchers("/api/user/me").authenticated()
                         .anyRequest().authenticated()
                 )
@@ -59,8 +72,7 @@ public class SecurityConfig {
                         })*/
                 )
                 .authenticationProvider(authenticationProvider())
-                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
-        ;
+                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
@@ -92,9 +104,9 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("http://localhost:5173"));   // add more if needed
-        config.setAllowedMethods(List.of("GET","POST","PUT","DELETE","OPTIONS"));
-        config.setAllowedHeaders(List.of("Authorization","Content-Type"));
+        config.setAllowedOriginPatterns(List.of("*"));
+        config.setAllowedMethods(List.of("*"));
+        config.setAllowedHeaders(List.of("*"));
         config.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();

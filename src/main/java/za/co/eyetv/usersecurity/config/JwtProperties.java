@@ -1,4 +1,4 @@
-package za.co.eyetv.usersecurity.common.config;
+package za.co.eyetv.usersecurity.config;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
