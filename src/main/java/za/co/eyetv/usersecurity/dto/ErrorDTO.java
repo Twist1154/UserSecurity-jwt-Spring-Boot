@@ -1,4 +1,4 @@
-package za.co.eyetv.usersecurity.common.dto;
+package za.co.eyetv.usersecurity.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

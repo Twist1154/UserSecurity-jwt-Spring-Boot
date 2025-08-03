@@ -1,4 +1,4 @@
-package za.co.eyetv.usersecurity.auth.dto;
+package za.co.eyetv.usersecurity.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class RefreshTokenRequest {
-    private String refreshToken;
+public class LoginRequest {
+    private String email;
+    private String password;
 }

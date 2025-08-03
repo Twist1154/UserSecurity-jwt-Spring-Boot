@@ -1,4 +1,4 @@
-package za.co.eyetv.usersecurity.auth.dto;
+package za.co.eyetv.usersecurity.dto;
 
 import lombok.*;
 

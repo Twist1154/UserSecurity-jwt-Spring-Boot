@@ -1,4 +1,4 @@
-package za.co.eyetv.usersecurity.auth.dto;
+package za.co.eyetv.usersecurity.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,7 +16,5 @@ import lombok.NoArgsConstructor;
 public class AuthenticationResponse {
     private String token;
     private String refreshToken;
-    private String email;
-    private String username;
-    private String role;
+    private UserDTO user;
 }
