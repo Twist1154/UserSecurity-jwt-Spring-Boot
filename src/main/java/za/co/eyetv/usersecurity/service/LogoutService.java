@@ -1,12 +1,12 @@
-package za.co.eyetv.usersecurity.blacklist.service;
+package za.co.eyetv.usersecurity.service;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.extern.slf4j.Slf4j;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import za.co.eyetv.usersecurity.auth.exception.TokenValidationException;
-import za.co.eyetv.usersecurity.auth.dto.LogoutResponse;
-import za.co.eyetv.usersecurity.auth.security.JwtService;
+import za.co.eyetv.usersecurity.exception.TokenValidationException;
+import za.co.eyetv.usersecurity.dto.LogoutResponse;
+import za.co.eyetv.usersecurity.security.JwtService;
 
 /**
  * @author: Rethabile Ntsekhe

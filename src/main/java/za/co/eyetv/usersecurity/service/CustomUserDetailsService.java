@@ -1,4 +1,4 @@
-package za.co.eyetv.usersecurity.user.service;
+package za.co.eyetv.usersecurity.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,8 +6,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import za.co.eyetv.usersecurity.user.repository.UserRepository;
-import za.co.eyetv.usersecurity.auth.security.UserPrincipal;
+import za.co.eyetv.usersecurity.repository.UserRepository;
+import za.co.eyetv.usersecurity.model.UserPrincipal;
 
 @Service
 @Slf4j
