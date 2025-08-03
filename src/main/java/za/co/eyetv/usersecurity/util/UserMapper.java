@@ -1,8 +1,8 @@
-package za.co.eyetv.usersecurity.common.util;
+package za.co.eyetv.usersecurity.util;
 
 import org.mapstruct.Mapper;
-import za.co.eyetv.usersecurity.user.model.User;
-import za.co.eyetv.usersecurity.user.dto.UserDTO;
+import za.co.eyetv.usersecurity.model.User;
+import za.co.eyetv.usersecurity.dto.UserDTO;
 
 /**
 *@author: Rethabile Ntsekhe
