@@ -1,10 +1,10 @@
-package za.co.eyetv.usersecurity.blacklist.repository;
+package za.co.eyetv.usersecurity.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-import za.co.eyetv.usersecurity.blacklist.model.BlacklistedToken;
-import za.co.eyetv.usersecurity.common.model.enums.TokenType;
+import za.co.eyetv.usersecurity.model.BlacklistedToken;
+import za.co.eyetv.usersecurity.model.enums.TokenType;
 
 import java.time.Instant;
 import java.util.List;

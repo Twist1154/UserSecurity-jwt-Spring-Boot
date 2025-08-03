@@ -1,11 +1,11 @@
-package za.co.eyetv.usersecurity.user.repository;
+package za.co.eyetv.usersecurity.repository;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import za.co.eyetv.usersecurity.common.model.enums.Roles;
-import za.co.eyetv.usersecurity.user.model.User;
+import za.co.eyetv.usersecurity.model.enums.Roles;
+import za.co.eyetv.usersecurity.model.User;
 
 import java.time.Instant;
 import java.util.Optional;
