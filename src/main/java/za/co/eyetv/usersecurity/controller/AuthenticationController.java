@@ -1,4 +1,4 @@
-package za.co.eyetv.usersecurity.auth.controller;
+package za.co.eyetv.usersecurity.controller;
 
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import za.co.eyetv.usersecurity.auth.dto.*;
-import za.co.eyetv.usersecurity.auth.service.AuthenticationService;
-import za.co.eyetv.usersecurity.blacklist.service.LogoutService;
+import za.co.eyetv.usersecurity.service.AuthenticationService;
+import za.co.eyetv.usersecurity.service.LogoutService;
+import za.co.eyetv.usersecurity.dto.*;
 
 /**
  * @author: Rethabile Ntsekhe

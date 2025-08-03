@@ -1,4 +1,4 @@
-package za.co.eyetv.usersecurity.user.exception;
+package za.co.eyetv.usersecurity.exception;
 
 
 

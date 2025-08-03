@@ -1,15 +1,15 @@
-package za.co.eyetv.usersecurity.user.controller;
+package za.co.eyetv.usersecurity.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import za.co.eyetv.usersecurity.user.model.User;
-import za.co.eyetv.usersecurity.user.dto.UserDTO;
-import za.co.eyetv.usersecurity.auth.security.SecurityUtils;
-import za.co.eyetv.usersecurity.auth.security.UserPrincipal;
-import za.co.eyetv.usersecurity.user.service.UserService;
+import za.co.eyetv.usersecurity.model.User;
+import za.co.eyetv.usersecurity.dto.UserDTO;
+import za.co.eyetv.usersecurity.security.SecurityUtils;
+import za.co.eyetv.usersecurity.model.UserPrincipal;
+import za.co.eyetv.usersecurity.service.UserService;
 
 import java.util.List;
 import java.util.Optional;
@@ -46,10 +46,10 @@ public class UserController {
 
     /**
      * Get the current authenticated user's profile information
-     * 
+     *
      * This endpoint returns basic profile information for the currently authenticated user.
      * It excludes sensitive information like passwords.
-     * 
+     *
      * @return the current user's profile information or 401 if not authenticated
      */
     @GetMapping("/api/user/me")
@@ -60,17 +60,8 @@ public class UserController {
             UserPrincipal userPrincipal = currentUserPrincipal.get();
             User user = userPrincipal.getUser();
 
-            // Create a response with user details (excluding sensitive information)
-            return ResponseEntity.ok(
-                UserDTO.builder()
-                    .id(user.getId())
-                    .email(user.getEmail())
-                    .username(user.getUsername())
-                    .name(user.getName())
-                    .role(user.getRole())
-                    .active(user.getActive())
-                    .build()
-            );
+            // Create a response with user details (excluding sensitive information) 
+            return ResponseEntity.ok(user);
         } else {
             return ResponseEntity.status(401).body("User not authenticated");
         }

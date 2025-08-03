@@ -1,4 +1,4 @@
-package za.co.eyetv.usersecurity.common.exception;
+package za.co.eyetv.usersecurity.exception;
 
 public class RateLimitExceededException extends RuntimeException {
     public RateLimitExceededException(String message) {

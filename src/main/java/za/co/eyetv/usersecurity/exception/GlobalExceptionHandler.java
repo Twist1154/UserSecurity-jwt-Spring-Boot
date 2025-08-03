@@ -1,4 +1,4 @@
-package za.co.eyetv.usersecurity.common.exception;
+package za.co.eyetv.usersecurity.exception;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.MalformedJwtException;
@@ -15,11 +15,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
-import za.co.eyetv.usersecurity.auth.exception.EmailAlreadyExistsException;
-import za.co.eyetv.usersecurity.auth.exception.InvalidRefreshTokenException;
-import za.co.eyetv.usersecurity.common.dto.ErrorDTO;
-import za.co.eyetv.usersecurity.user.exception.UserNotActivatedException;
-import za.co.eyetv.usersecurity.user.exception.UsernameAlreadyExistsException;
+import za.co.eyetv.usersecurity.dto.ErrorDTO;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
