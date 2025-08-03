@@ -1,9 +1,10 @@
-package za.co.eyetv.usersecurity.auth.security;
+package za.co.eyetv.usersecurity.security;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import za.co.eyetv.usersecurity.user.model.User;
+import za.co.eyetv.usersecurity.model.User;
+import za.co.eyetv.usersecurity.model.UserPrincipal;
 
 import java.util.Optional;
 

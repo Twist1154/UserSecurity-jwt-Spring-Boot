@@ -1,4 +1,4 @@
-package za.co.eyetv.usersecurity.auth.security;
+package za.co.eyetv.usersecurity.security;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
@@ -9,11 +9,11 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
-import za.co.eyetv.usersecurity.common.config.JwtProperties;
-import za.co.eyetv.usersecurity.auth.exception.TokenValidationException;
-import za.co.eyetv.usersecurity.blacklist.model.BlacklistedToken;
-import za.co.eyetv.usersecurity.common.model.enums.TokenType;
-import za.co.eyetv.usersecurity.blacklist.repository.BlacklistedTokenRepository;
+import za.co.eyetv.usersecurity.config.JwtProperties;
+import za.co.eyetv.usersecurity.exception.TokenValidationException;
+import za.co.eyetv.usersecurity.model.BlacklistedToken;
+import za.co.eyetv.usersecurity.model.enums.TokenType;
+import za.co.eyetv.usersecurity.repository.BlacklistedTokenRepository;
 
 import java.security.Key;
 import java.time.Instant;
@@ -42,7 +42,7 @@ public class JwtService {
     }
 
     private Key getSigningKey() {
-        return Keys.hmacShaKeyFor(jwtProperties.getSecret().getBytes());
+        return Keys.hmacShaKeyFor(jwtProperties.getSecret().getBytes(java.nio.charset.StandardCharsets.UTF_8));
     }
 
     public String extractUsername(String token) {
