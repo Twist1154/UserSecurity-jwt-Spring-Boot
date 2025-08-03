@@ -1,4 +1,4 @@
-package za.co.eyetv.usersecurity.common.model.enums;
+package za.co.eyetv.usersecurity.model.enums;
 
 
 

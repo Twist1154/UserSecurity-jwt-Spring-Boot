@@ -1,10 +1,9 @@
-package za.co.eyetv.usersecurity.auth.security;
+package za.co.eyetv.usersecurity.model;
 
 import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import za.co.eyetv.usersecurity.user.model.User;
 
 import java.util.Collection;
 import java.util.Collections;

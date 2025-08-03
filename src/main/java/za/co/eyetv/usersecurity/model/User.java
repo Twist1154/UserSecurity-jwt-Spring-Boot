@@ -1,4 +1,4 @@
-package za.co.eyetv.usersecurity.user.model;
+package za.co.eyetv.usersecurity.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -10,7 +10,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import za.co.eyetv.usersecurity.common.model.enums.Roles;
+import za.co.eyetv.usersecurity.model.enums.Roles;
 
 import java.io.Serializable;
 import java.time.Instant;

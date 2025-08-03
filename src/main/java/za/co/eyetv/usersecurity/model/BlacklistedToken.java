@@ -1,9 +1,9 @@
-package za.co.eyetv.usersecurity.blacklist.model;
+package za.co.eyetv.usersecurity.model;
 
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
-import za.co.eyetv.usersecurity.common.model.enums.TokenType;
+import za.co.eyetv.usersecurity.model.enums.TokenType;
 
 import java.time.Instant;
 
